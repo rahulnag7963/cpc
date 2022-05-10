@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './Pages/Home';
+import Header from './Header';
+import IndividualCoin from './Pages/IndividualCoin';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div className="p-3 mb-2 bg-dark text-white">
+        <Header />
+          <Routes>
+            <Route path ="/" element = {<Home/>} exact />
+            <Route path = "/IndividualCoin/:CryptoId" element = {<IndividualCoin/>}></Route>
+        </Routes>
+        </div>
+    </Router>    
+  
   );
 }
 
