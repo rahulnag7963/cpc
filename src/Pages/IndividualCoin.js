@@ -4,7 +4,7 @@ import { InfoState } from '../GetCryptoInfo';
 import { useState, useEffect} from 'react';
 import axios from 'axios';
 import { OneCoin } from '../CryptoApis';
-import {Card,ListGroupItem,Spinner,Row,Col} from 'react-bootstrap';
+import {Card,Spinner,Row,Col, Button, FormControl, InputGroup} from 'react-bootstrap';
 import ReactHtmlParser from 'react-html-parser';
 import Graph from './Graph';
 const IndividualCoin = () => {
@@ -27,7 +27,7 @@ const IndividualCoin = () => {
             <span className="visually-hidden">Loading...</span>
         </Spinner>)}
     return (
-        <div>
+        <div className = "p-3">
         <Row >
         <Col sm = {3}>     
             <Card 
@@ -50,6 +50,8 @@ const IndividualCoin = () => {
             <Graph coin={coin}/>
         </Col>
         </Row>
+        <Row>
+        <Col sm= {3}>
         <Card
             bg='dark'
             text='light'
@@ -66,7 +68,9 @@ const IndividualCoin = () => {
                         <Row className = "bg-dark text-white px-4">Total Supply is: {coin.market_data.total_supply === null ? "Infinite" : coin.market_data.total_supply.toLocaleString()}</Row>
                         <Row className = "bg-dark text-white px-4">Circulating Supply is: {coin.market_data.total_supply === null ? "Infinite" : coin.market_data.circulating_supply.toLocaleString()}</Row>
                     </Card.Body>
-            </Card>    
+        </Card> 
+        </Col>
+        </Row>   
         </div>
     )
 }
