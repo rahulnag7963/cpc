@@ -1,4 +1,5 @@
-A copy of the cryptocurrency pricechecker made to able to overcome the orginal issues with hosting on fleek. 
+A copy of the cryptocurrency pricechecker made to able to overcome the orginal issues with hosting on fleek.
+Link to website: https://cryptocurrencypricechecker.on.fleek.co/ 
 
 The project is built using ReactJS, Bootstrap, React ChartJS, and gets all the data from CoinGecko API, which is then displayed on the website.
 
